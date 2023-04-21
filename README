@@ -1,0 +1,73 @@
+
+CTA-861 version:
+CTA-861-G Standard from November 28, 2017
+
+   +---------------+
+   | KNOWN ISSUES: |
+   +---------------+
+
+1. CEA/CTA-861: Data Block Collection (DBC):
+   The data structures in DBC are variable, and their layout depends on complex
+   combinations of various fields values. Changing a single value (even a single bit)
+   can change the whole layout of the block.
+   In many cases, more than one value has to be changed to obtain a valid structure of
+   different type, f.e.:
+   changing ADB.SAD.AFC value to 15 (ACE: Audio Coding Extension Type Code) will cause
+   error, because AFC=15 in byte 1 requires also a valid ACE value in byte 3.
+   In such cases the editor will switch to a fallback mode, and the data structures
+   will be displayed as "unknown/damaged".
+   wxEDID Solution: (not yet implemented):
+   A set of constructors which will immediately initialize the required block data fields,
+   depending on selected type.
+   The constructors could be invoked from contextual menus, by right-clicking on particular
+   block in the block tree structure.
+
+2. SVD: Short Video Descriptor:
+   The data layout for this block depends on:
+   a) CEA-861 header revision
+   b) Video ID Code (VIC)
+   wxEDID will always show the "native_mode" bit7 and the VIC as 8-bit value at the same time.
+   This means, that changing "native_mode" bit can also change the VIC value.
+
+3. VDDDB: VESA Display Device Data Block:
+   VESA DDDB Standard, Version 1; September 25, 2006, section 2.7: Device Native Pixel Format
+   A bug in the specification: The STD defines stored 16-bit H/V pixel count as (pix_count-1),
+   (what gives the effective range of 1-65536 for 0x0-0xFFFF), but the Std says that thanks to (pix_count-1)
+   formula the maximum is 65535x65535, which is not true.
+   wxEDID will use range of 1-65536.
+
+4. CEA::VDB:
+   The pseudo-code for VIC values decoding treats VIC range 193..253 as valid, while the max Video ID value
+   in Table 3 (Video Formats) is 219.
+   wxEDID will report VIC values in range 220..255 as reserved.
+
+5. CEA-DBC: Extended Tag Code=3: VESA Video Timing Block Extension (VTB-EXT):
+   The specification references VTB-EXT Standard, Release A, November 24, 2003.
+   The VTB-EXT extension block is defined as a 128 byte structure, what exceeds the range allowed
+   by the DBC Extended Tag header (30 bytes).
+   None of the documents is addressing this issue.
+   wxEDID will report error for Extended Tag Code=3, and the block will be interpreted as unknown.
+
+6. Discrepancy in block length handling:
+   a) CEA-DBC: Extended Tag Code=32: section 7.5.9 IFDB: InfoFrame Data Block:
+      InfoFrame Type Code != 0x01 || 0x00: Short InfoFrame Descriptor Header:
+      The payload length is counted from the first byte after the header
+   b) CEA-DBC: Extended Tag Code=32: 7.5.9 IFDB: InfoFrame Data Block:
+      InfoFrame Type Code = 0x01: Short Vendor-Specific InfoFrame Descriptor Header:
+      The payload length excludes the first 3 bytes of IEEE OUI.
+   This means that the length of header depends on InfoFrame Type Code.
+
+7. For any block type, the payload data which is not strictly defined by the CTA-861-G
+   is displayed as "unknown".
+
+8. SLDB: Some speaker names used in CTA-861-F are changed in CTA-861-G. See Annex Q for details.
+   wxEDID uses speaker names from the "G" revision - differences are harmless.
+
+9. VSD: The payload is interpreted as for 00-0C-03 "HDMI Licensing, LLC", what means that
+   for other IEEE-OUI codes the interpretation is incorrect.
+
+
+If You'll find any bugs, please don't hesitate to contact me:
+tomasz.pawlak@wp.eu
+
+

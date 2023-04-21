@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="wxEDID_Frame">
+		<title>wxEDID</title>
+		<centered>1</centered>
+		<minsize>640,440</minsize>
+		<id_arg>0</id_arg>
+		<object class="wxAuiManager" variable="AuiMgrMain" member="yes">
+			<style>0</style>
+			<object class="AuiManagerItem">
+				<object class="wxAuiNotebook" name="id_ntbook" variable="ntbook" member="yes">
+					<style>0</style>
+					<object class="AuiNotebookPage">
+						<object class="wxPanel" name="id_panel_edid" variable="edid_panel" member="yes">
+							<object class="wxAuiManager" variable="AuiMgrEDID" member="yes">
+								<style>wxAUI_MGR_RECTANGLE_HINT</style>
+								<object class="AuiManagerItem">
+									<object class="wxTreeCtrl" name="id_block_tree" subclass="blktree_cl" variable="BlockTree" member="yes">
+										<image_list></image_list>
+										<tree_items>
+											<item>BlockTree</item>
+											<item></item>
+										</tree_items>
+										<items_text>
+											<item2>BlockTree</item2>
+											<item2></item2>
+										</items_text>
+										<minsize>150,-1</minsize>
+										<style>wxTR_HAS_BUTTONS|wxTR_SINGLE|wxTAB_TRAVERSAL</style>
+									</object>
+									<name>TreeDataCtl</name>
+									<standardpanetype>Default</standardpanetype>
+									<caption>Block Tree</caption>
+									<minimizebutton>0</minimizebutton>
+									<maximizebutton>0</maximizebutton>
+									<pinbutton>0</pinbutton>
+									<closebutton>0</closebutton>
+									<dockdirection>Left</dockdirection>
+									<dockfixed>0</dockfixed>
+									<dockabledirection>.TopDockable(false).BottomDockable(false).RightDockable(false)</dockabledirection>
+									<floatable>0</floatable>
+									<movable>0</movable>
+									<firstadd>0</firstadd>
+								</object>
+								<object class="AuiManagerItem">
+									<object class="wxGrid" name="id_grid_blkdat" subclass="fgrid_cl" variable="BlkDataGrid" member="yes">
+										<cols>5</cols>
+										<rows>8</rows>
+										<collabels>
+											<item>Name</item>
+											<item>Type</item>
+											<item>Value</item>
+											<item>Unit</item>
+											<item>Flags</item>
+										</collabels>
+										<enabled>0</enabled>
+									</object>
+									<name>GridDataCtl</name>
+									<standardpanetype>Default</standardpanetype>
+									<caption>Block Data</caption>
+									<minimizebutton>0</minimizebutton>
+									<maximizebutton>0</maximizebutton>
+									<pinbutton>0</pinbutton>
+									<closebutton>0</closebutton>
+									<dockdirection>Center</dockdirection>
+									<dockfixed>0</dockfixed>
+									<dockabledirection>.TopDockable(false).BottomDockable(false).LeftDockable(false)</dockabledirection>
+									<floatable>0</floatable>
+									<movable>0</movable>
+									<firstadd>0</firstadd>
+								</object>
+								<object class="AuiManagerItem">
+									<object class="wxTextCtrl" name="id_txc_edid_info" variable="txc_edid_info" member="yes">
+										<fg>#000000</fg>
+										<bg>#FFFFFF</bg>
+										<minsize>-1,100</minsize>
+										<style>wxTE_MULTILINE|wxTE_READONLY|wxTE_WORDWRAP|wxVSCROLL</style>
+									</object>
+									<name>InfoCtl</name>
+									<standardpanetype>Default</standardpanetype>
+									<caption>Info</caption>
+									<minimizebutton>0</minimizebutton>
+									<maximizebutton>0</maximizebutton>
+									<pinbutton>0</pinbutton>
+									<closebutton>0</closebutton>
+									<position>1</position>
+									<dockdirection>Center</dockdirection>
+									<dockfixed>0</dockfixed>
+									<dockabledirection>.TopDockable(false).BottomDockable(false).RightDockable(false)</dockabledirection>
+									<floatable>0</floatable>
+									<movable>0</movable>
+									<firstadd>0</firstadd>
+								</object>
+							</object>
+						</object>
+						<label>EDID</label>
+					</object>
+					<object class="AuiNotebookPage">
+						<object class="wxPanel" name="id_panel_dtd" variable="dtd_panel" member="yes">
+							<object class="wxBoxSizer" variable="bs_dtd_main" member="yes">
+								<orient>wxVERTICAL</orient>
+								<object class="sizeritem">
+									<object class="wxFlexGridSizer" variable="fgs_dtd" member="yes">
+										<cols>2</cols>
+										<rows>3</rows>
+										<object class="sizeritem">
+											<object class="wxFlexGridSizer" variable="fgs_dtd_top" member="yes">
+												<cols>4</cols>
+												<rows>4</rows>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT5" variable="StaticText5" member="yes">
+														<label>Pixel Clock</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="spacer">
+													<flag>wxLEFT|wxRIGHT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>8</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT6" variable="StaticText6" member="yes">
+														<label>V-Refresh</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="spacer">
+													<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxSpinCtrl" name="id_sct_pixclk" subclass="dtd_sct_cl" variable="sct_pixclk" member="yes">
+														<value>0</value>
+														<min>1</min>
+														<max>655350</max>
+													</object>
+													<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+														<label>x10kHz</label>
+													</object>
+													<flag>wxRIGHT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>8</border>
+													<option>2</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="id_txc_vrefresh" variable="txc_vrefresh" member="yes">
+														<value>0</value>
+														<bg>#E0E0E0</bg>
+														<minsize>70,-1</minsize>
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
+														<label>Hz</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>2</option>
+												</object>
+											</object>
+											<flag>wxTOP|wxBOTTOM|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>6</border>
+											<option>1</option>
+										</object>
+										<object class="spacer">
+											<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+											<option>1</option>
+										</object>
+										<object class="sizeritem">
+											<object class="wxPanel" name="id_dtd_screen" subclass="dtd_screen_cl" variable="dtd_screen" member="yes">
+												<style>wxFULL_REPAINT_ON_RESIZE</style>
+											</object>
+											<flag>wxEXPAND</flag>
+											<border>4</border>
+											<option>1</option>
+										</object>
+										<object class="sizeritem">
+											<object class="wxFlexGridSizer" variable="fgs_dtd_right" member="yes">
+												<cols>5</cols>
+												<rows>7</rows>
+												<vgap>1</vgap>
+												<hgap>5</hgap>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT12" variable="StaticText12" member="yes">
+														<label>X-res</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxSpinCtrl" name="id_sct_xres" subclass="dtd_sct_cl" variable="sct_xres" member="yes">
+														<value>0</value>
+														<min>1</min>
+														<max>4095</max>
+													</object>
+													<flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT11" variable="StaticText11" member="yes">
+														<label>pix</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="id_txres" variable="txc_txres" member="yes">
+														<value>0</value>
+														<bg>#E0E0E0</bg>
+														<minsize>70,-1</minsize>
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT33" variable="StaticText33" member="yes">
+														<label>us</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT14" variable="StaticText14" member="yes">
+														<label>H-Border</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxSpinCtrl" name="id_sct_hborder" subclass="dtd_sct_cl" variable="sct_hborder" member="yes">
+														<value>0</value>
+														<max>255</max>
+													</object>
+													<flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT13" variable="StaticText13" member="yes">
+														<label>pix</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="spacer">
+													<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="spacer">
+													<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT7" variable="StaticText7" member="yes">
+														<label>H-Blank</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxSpinCtrl" name="id_sct_hblank" subclass="dtd_sct_cl" variable="sct_hblank" member="yes">
+														<value>0</value>
+														<min>1</min>
+														<max>4095</max>
+													</object>
+													<flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT3" variable="StaticText3" member="yes">
+														<label>pix</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="id_txc_thblank" variable="txc_thblank" member="yes">
+														<value>0</value>
+														<size>50,22</size>
+														<bg>#E0E0E0</bg>
+														<minsize>70,-1</minsize>
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT29" variable="StaticText29" member="yes">
+														<label>us</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT8" variable="StaticText8" member="yes">
+														<label>H-Sync offs.</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxSpinCtrl" name="id_sct_hsoffs" subclass="dtd_sct_cl" variable="sct_hsoffs" member="yes">
+														<value>0</value>
+														<max>1023</max>
+													</object>
+													<flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT4" variable="StaticText4" member="yes">
+														<label>pix</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="id_txc_thsoffs" variable="txc_thsoffs" member="yes">
+														<value>0</value>
+														<size>50,22</size>
+														<bg>#E0E0E0</bg>
+														<minsize>70,-1</minsize>
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT30" variable="StaticText30" member="yes">
+														<label>us</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT9" variable="StaticText9" member="yes">
+														<label>H-Sync width</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxSpinCtrl" name="id_sct_hswidth" subclass="dtd_sct_cl" variable="sct_hswidth" member="yes">
+														<value>0</value>
+														<min>1</min>
+														<max>1023</max>
+													</object>
+													<flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT10" variable="StaticText10" member="yes">
+														<label>pix</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="id_thswidth" variable="txc_thswidth" member="yes">
+														<value>0</value>
+														<bg>#E0E0E0</bg>
+														<minsize>70,-1</minsize>
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT31" variable="StaticText31" member="yes">
+														<label>us</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT27" variable="StaticText27" member="yes">
+														<label>H total</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="id_txc_htotal" variable="txc_htotal" member="yes">
+														<value>0</value>
+														<size>60,22</size>
+														<bg>#E0E0E0</bg>
+														<minsize>80,-1</minsize>
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT32" variable="StaticText32" member="yes">
+														<label>pix</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="id_txc_thtotal" variable="txc_thtotal" member="yes">
+														<value>0</value>
+														<bg>#E0E0E0</bg>
+														<minsize>70,-1</minsize>
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT28" variable="StaticText28" member="yes">
+														<label>us</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT25" variable="StaticText25" member="yes">
+														<label>H-Freq</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="id_txc_hfreq" variable="txc_hfreq" member="yes">
+														<value>0</value>
+														<bg>#E0E0E0</bg>
+														<minsize>80,-1</minsize>
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT26" variable="StaticText26" member="yes">
+														<label>kHz</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="spacer">
+													<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="spacer">
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+											</object>
+											<flag>wxLEFT|wxRIGHT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>4</border>
+											<option>1</option>
+										</object>
+										<object class="sizeritem">
+											<object class="wxFlexGridSizer" variable="fgs_dtd_bottom" member="yes">
+												<cols>5</cols>
+												<rows>6</rows>
+												<vgap>1</vgap>
+												<hgap>5</hgap>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT15" variable="StaticText15" member="yes">
+														<label>V-res</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxSpinCtrl" name="id_sct_vres" subclass="dtd_sct_cl" variable="sct_vres" member="yes">
+														<value>0</value>
+														<min>1</min>
+														<max>4095</max>
+													</object>
+													<flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT16" variable="StaticText16" member="yes">
+														<label>pix</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="id_txc_tvres" variable="txc_tvres" member="yes">
+														<value>0</value>
+														<bg>#E0E0E0</bg>
+														<minsize>70,-1</minsize>
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxLEFT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT34" variable="StaticText34" member="yes">
+														<label>ms</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT17" variable="StaticText17" member="yes">
+														<label>V-Border</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxSpinCtrl" name="id_sct_vborder" subclass="dtd_sct_cl" variable="sct_vborder" member="yes">
+														<value>0</value>
+														<max>255</max>
+													</object>
+													<flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT18" variable="StaticText18" member="yes">
+														<label>lines</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="spacer">
+													<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="spacer">
+													<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT19" variable="StaticText19" member="yes">
+														<label>V-Blank</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxSpinCtrl" name="id_sct_vblank" subclass="dtd_sct_cl" variable="sct_vblank" member="yes">
+														<value>0</value>
+														<min>1</min>
+														<max>4095</max>
+													</object>
+													<flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT20" variable="StaticText20" member="yes">
+														<label>lines</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="id_txc_tvblank" variable="txc_tvblank" member="yes">
+														<value>0</value>
+														<bg>#E0E0E0</bg>
+														<minsize>70,-1</minsize>
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxLEFT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT35" variable="StaticText35" member="yes">
+														<label>ms</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT21" variable="StaticText21" member="yes">
+														<label>V-Sync offs.</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxSpinCtrl" name="id_sct_vsoffs" subclass="dtd_sct_cl" variable="sct_vsoffs" member="yes">
+														<value>0</value>
+														<max>1023</max>
+													</object>
+													<flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT22" variable="StaticText22" member="yes">
+														<label>lines</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="id_txc_tvsoffs" variable="txc_tvsoffs" member="yes">
+														<value>0</value>
+														<bg>#E0E0E0</bg>
+														<minsize>70,-1</minsize>
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxLEFT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT36" variable="StaticText36" member="yes">
+														<label>ms</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT23" variable="StaticText23" member="yes">
+														<label>V-Sync width</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxSpinCtrl" name="id_sct_vswidth" subclass="dtd_sct_cl" variable="sct_vswidth" member="yes">
+														<value>0</value>
+														<min>1</min>
+														<max>1023</max>
+													</object>
+													<flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT24" variable="StaticText24" member="yes">
+														<label>lines</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="id_txc_vswidth" variable="txc_tvswidth" member="yes">
+														<value>0</value>
+														<bg>#E0E0E0</bg>
+														<minsize>70,-1</minsize>
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxLEFT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT37" variable="StaticText37" member="yes">
+														<label>ms</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT38" variable="StaticText38" member="yes">
+														<label>V total</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="id_txc_vtotal" variable="txc_vtotal" member="yes">
+														<value>0</value>
+														<bg>#E0E0E0</bg>
+														<minsize>70,-1</minsize>
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT39" variable="StaticText39" member="yes">
+														<label>lines</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="id_txc_tvtotal" variable="txc_tvtotal" member="yes">
+														<value>0</value>
+														<bg>#E0E0E0</bg>
+														<minsize>70,-1</minsize>
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxLEFT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT40" variable="StaticText40" member="yes">
+														<label>ms</label>
+													</object>
+													<flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+											</object>
+											<flag>wxTOP|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>4</border>
+											<option>1</option>
+										</object>
+									</object>
+									<flag>wxLEFT|wxEXPAND</flag>
+									<border>16</border>
+									<option>1</option>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBoxSizer" variable="BoxSizer5" member="no">
+										<object class="sizeritem">
+											<object class="wxStaticText" name="ID_STATICTEXT41" variable="StaticText41" member="yes">
+												<label>X11 ModeLine</label>
+											</object>
+											<flag>wxLEFT|wxRIGHT|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+											<option>4</option>
+										</object>
+										<object class="sizeritem">
+											<object class="wxTextCtrl" name="id_txc_modeline" variable="txc_modeline" member="yes">
+												<bg>#E0E0E0</bg>
+												<style>wxTE_READONLY</style>
+											</object>
+											<flag>wxLEFT|wxRIGHT|wxEXPAND</flag>
+											<border>4</border>
+											<option>19</option>
+										</object>
+									</object>
+									<flag>wxTOP|wxBOTTOM|wxEXPAND</flag>
+									<border>4</border>
+								</object>
+							</object>
+						</object>
+						<label>DTD Constructor</label>
+					</object>
+				</object>
+				<name>AUInbook</name>
+				<caption>Nbook</caption>
+				<captionvisible>0</captionvisible>
+				<minimizebutton>0</minimizebutton>
+				<maximizebutton>0</maximizebutton>
+				<pinbutton>0</pinbutton>
+				<closebutton>0</closebutton>
+				<dockdirection>Center</dockdirection>
+				<dockfixed>0</dockfixed>
+				<dockabledirection></dockabledirection>
+				<floatable>0</floatable>
+				<movable>0</movable>
+				<paneborder>0</paneborder>
+				<destroyonclose>0</destroyonclose>
+				<firstadd>0</firstadd>
+			</object>
+		</object>
+		<object class="wxMenuBar" variable="MenuBar1" member="no">
+			<object class="wxMenu" variable="Menu1" member="no">
+				<label>&amp;File</label>
+				<object class="wxMenuItem" name="wxID_OPEN" variable="mnu_open_edi" member="yes">
+					<label>Open EDID binary</label>
+					<accel>ctrl-O</accel>
+				</object>
+				<object class="wxMenuItem" name="wxID_SAVE" variable="mnu_save_edi" member="yes">
+					<label>Save EDID binary</label>
+					<accel>ctrl-S</accel>
+					<enabled>0</enabled>
+				</object>
+				<object class="wxMenuItem" name="wxID_SAVEAS" variable="mnu_save_text" member="yes">
+					<label>Save as text</label>
+					<help>Saves EDID as human readable text file</help>
+					<enabled>0</enabled>
+				</object>
+				<object class="wxMenuItem" name="id_mnu_imphex" variable="mnu_imphex" member="yes">
+					<label>Import EDID from HEX (ASCII)</label>
+				</object>
+				<object class="wxMenuItem" name="id_mnu_exphex" variable="mnu_exphex" member="yes">
+					<label>Export EDID as HEX (ASCII)</label>
+					<enabled>0</enabled>
+				</object>
+				<object class="wxMenuItem" name="wxID_EXIT" variable="mnu_quit" member="no">
+					<label>Quit</label>
+					<accel>Alt-F4</accel>
+					<help>Quit the application</help>
+				</object>
+			</object>
+			<object class="wxMenu" variable="Menu3" member="yes">
+				<label>Options</label>
+				<object class="wxMenuItem" name="id_mnu_parse" variable="mnu_reparse" member="yes">
+					<label>Reparse EDID buffer</label>
+					<help>Reinterpret EDID data</help>
+					<enabled>0</enabled>
+				</object>
+				<object class="wxMenuItem" name="id_mnu_asmchg" variable="mnu_assemble" member="yes">
+					<label>Assemble EDID</label>
+					<help>Apply changes, update checksums</help>
+					<enabled>0</enabled>
+				</object>
+				<object class="wxMenuItem" name="id_mnu_ignerr" variable="mnu_ignore_err" member="yes">
+					<label>Ignore EDID Errors</label>
+					<checkable>1</checkable>
+				</object>
+				<object class="wxMenuItem" name="id_mnu_allwr" variable="mnu_allwritable" member="yes">
+					<label>Ignore Read-Only flags</label>
+					<checkable>1</checkable>
+				</object>
+				<object class="wxMenuItem" name="id_mnu_dtd_asp" variable="mnu_dtd_aspect" member="yes">
+					<label>DTD preview: keep aspect ratio</label>
+					<checked>1</checked>
+					<checkable>1</checkable>
+				</object>
+				<object class="wxMenuItem" name="id_mnu_fdetails" variable="mnu_fdetails" member="yes">
+					<label>Block Data: show field details</label>
+					<checkable>1</checkable>
+				</object>
+				<object class="wxMenuItem" name="id_mnu_logw" variable="mnu_logw" member="yes">
+					<label>Log Window</label>
+					<accel>ctrl-L</accel>
+				</object>
+			</object>
+			<object class="wxMenu" variable="Menu2" member="no">
+				<label>Help</label>
+				<object class="wxMenuItem" name="wxID_ABOUT" variable="mnu_about" member="no">
+					<label>About</label>
+					<accel>F1</accel>
+					<help>Show info about this application</help>
+				</object>
+				<object class="wxMenuItem" name="id_mnu_flags" variable="MenuItem1" member="yes">
+					<label>Flags &amp; Types</label>
+					<accel>F3</accel>
+				</object>
+			</object>
+		</object>
+		<object class="wxStatusBar" name="id_win_stat_bar" variable="win_stat_bar" member="yes">
+			<fields>2</fields>
+			<widths>-300,300</widths>
+			<styles>wxSB_NORMAL,wxSB_NORMAL</styles>
+			<style>wxST_SIZEGRIP</style>
+		</object>
+	</object>
+</wxsmith>

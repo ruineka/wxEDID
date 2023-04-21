@@ -1,0 +1,22 @@
+#rcd_autogen: arguments for target: "wxedid"
+
+#base name for output files, prefix for function names and variables
+--base-name=wxedid
+
+#language & preprocessor
+--lang=CPP
+--preproc=g++
+--pp-args='-E -Wfatal-errors'
+
+#dirs
+--root-dir=src
+--out-dir=.
+--temp-dir=tmp
+
+#scan target
+--scan-target=.
+
+#verbose & debug
+--verbose
+--debug-level=0
+

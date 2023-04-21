@@ -1,0 +1,45 @@
+.TH wxedid 1 "" "" "wxEDID Manual Page"
+.SH NAME
+wxEDID \- Graphical editor for EDID data presented by computer displays
+.SH SYNOPSIS
+.B wxedid
+.RB [\| \-e \|] [\| \-w \|] [\| \-t \|]
+.IR file
+.SH DESCRIPTION
+wxEDID is a wxWidgets based editor for Extended Display Identification
+Data (EDID). It operates on offline files that can be flashed to a monitor
+using the technique described
+.UR https://wiki.debian.org/RepairEDID
+here
+.UE .
+
+This tool can modify the base EDID v1.3+ structure and the CEA/CTA-861-G,
+as the first extension block. The program also provides a DTD constructor
+to aid with the selection of suitable timings.
+
+The tool can import and export EDID data in binary blob and in hexadecimal
+formats.
+.SH ARGUMENT
+A \fIfile\fR with EDID information to be edited.
+.SH OPTIONS
+.TP
+.B \-e, \-\-ignore-errors
+Ignore errors in \fIfile\fR
+.TP
+.B \-w, \-\-all-writeable
+Ignore read-only flags - all EDID fields are writeable.
+.TP
+.B \-t, \-\-text
+Assume the \fIfile\fR argument is a text file containing EDID data bytes in a hexadecimal format (and not binary EDID data).
+.SH SEE ALSO
+.UR https://wiki.debian.org/RepairEDID
+Flashing Instructions
+.UE
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+This manual page was written by Felix Lechner <felix.lechner@lease-up.com>
+for the Debian project, but may be used by anyone under the same license
+as wxEDID.
+.br
+Updated by Tomasz Pawlak <tomasz.pawlak@wp.eu>

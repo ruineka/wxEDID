@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="wxEDID" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug_skip_RCD">
+				<Option output="target/wxedid" prefix_auto="1" extension_auto="1" />
+				<Option object_output="target/obj/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option parameters="-e -w" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-Wunused-function" />
+				</Compiler>
+			</Target>
+			<Target title="Debug">
+				<Option output="target/wxedid" prefix_auto="1" extension_auto="1" />
+				<Option object_output="target/obj/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option parameters="-e -w" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-Wunused-function" />
+				</Compiler>
+				<ExtraCommands>
+					<Add before='cd ..; export RCDGEN_PP_ARGS=&quot;`wx-config --cflags`&quot;; ./src/rcode/rcd_autogen src/wxedid.rcdgen_cfg' />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release">
+				<Option output="target/wxedid" prefix_auto="1" extension_auto="1" />
+				<Option object_output="target/obj/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option parameters="-e -w" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O1" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='cd ..; export RCDGEN_PP_ARGS=&quot;`wx-config --cflags`&quot;; ./src/rcode/rcd_autogen src/wxedid.rcdgen_cfg' />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release_skip_RCD">
+				<Option output="target/wxedid" prefix_auto="1" extension_auto="1" />
+				<Option object_output="target/obj/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option parameters="-e -w" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O1" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="`wx-config --cflags`" />
+			<Add option="-fno-exceptions" />
+			<Add option="-D_USE_RCD_AUTOGEN" />
+		</Compiler>
+		<Linker>
+			<Add option="`wx-config --libs std,aui`" />
+		</Linker>
+		<Unit filename="../ChangeLog" />
+		<Unit filename="../INSTALL">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="../README">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="../man/wxedid.1">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="../src/CEA.h" />
+		<Unit filename="../src/CEA_EXT.h" />
+		<Unit filename="../src/CEA_EXT_class.cpp" />
+		<Unit filename="../src/CEA_EXT_class.h" />
+		<Unit filename="../src/CEA_class.cpp">
+			<Option weight="49" />
+		</Unit>
+		<Unit filename="../src/CEA_class.h" />
+		<Unit filename="../src/EDID.h" />
+		<Unit filename="../src/EDID_class.cpp" />
+		<Unit filename="../src/EDID_class.h" />
+		<Unit filename="../src/EDID_shared.h" />
+		<Unit filename="../src/config.h" />
+		<Unit filename="../src/debug.h" />
+		<Unit filename="../src/def_types.h" />
+		<Unit filename="../src/grpar.cpp" />
+		<Unit filename="../src/grpar.h" />
+		<Unit filename="../src/guilog.cpp" />
+		<Unit filename="../src/guilog.h" />
+		<Unit filename="../src/rcdunits.h" />
+		<Unit filename="../src/rcode/rcd_autogen" />
+		<Unit filename="../src/rcode/rcode.h" />
+		<Unit filename="../src/svd_vidfmt.h" />
+		<Unit filename="../src/wxEDID_App.cpp" />
+		<Unit filename="../src/wxEDID_App.h" />
+		<Unit filename="../src/wxEDID_Main.cpp" />
+		<Unit filename="../src/wxEDID_Main.h" />
+		<Unit filename="../src/wxedid_rcd_scope.cpp" />
+		<Unit filename="../src/wxedid_rcd_scope.h" />
+		<Unit filename="wxsmith/wxEDID_frame.wxs" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="../src/wxEDID_App.cpp" main="wxEDID_Frame" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxFrame wxs="wxsmith/wxEDID_frame.wxs" src="../src/wxEDID_Main.cpp" hdr="../src/wxEDID_Main.h" fwddecl="0" i18n="1" name="wxEDID_Frame" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
